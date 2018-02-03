@@ -1,0 +1,89 @@
+.profile-pics {
+  padding: 0;
+  border: none;
+}
+
+.megan {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/megan-headshot.jpg') center no-repeat
+    
+}
+
+.megan:hover {
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/megan.gif') center no-repeat;
+}
+
+.moises {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/moises-headshot.jpg') center no-repeat
+    
+}
+
+.moises:hover {
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/moises.gif') center no-repeat;
+}
+
+.dave {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/dave-headshot.jpg') center no-repeat
+    
+}
+
+.dave:hover {
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/dave.gif') center no-repeat;
+}
+
+.suli {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/suli-headshot.jpg') center no-repeat
+    
+}
+
+.suli:hover {
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/suli.gif') center no-repeat;
+}
+
+.chrissy {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/chrissy-headshot.jpg') center no-repeat
+    
+}
+
+.chrissy:hover {
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/chrissy.gif') center no-repeat;
+}
+
+.anita {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('https://idcare.worldsecuresystems.com/_assets/img/team/anita-headshot.jpg') center no-repeat
+    
+}
+
+.jenni {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('http://www.idcare.org/wp-content/uploads/2014/09/64x64.png') center no-repeat
+    
+}
+
+.pia {
+  width: auto;
+  height: 273px;
+  margin: 0 auto;
+  background: url('http://www.idcare.org/wp-content/uploads/2014/09/64x64.png') center no-repeat
+    
+}
+

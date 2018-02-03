@@ -1,0 +1,35 @@
+/*
+Images
+
+# https://images.unsplash.com/photo-1466154714956-9f5f64682fcc?ixlib=rb-0.3.5&q=40&fm=jpg&crop=entropy&s=db23742c68ac4e331416021a2cfadfac&w=1000
+
+# https://images.unsplash.com/photo-1460400408855-36abd76648b9?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=1c9fc275d85ee05c6e64f09eff62b363&w=1000
+
+# https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=61282cfeed75871385c84c2a44a8e594&w=1000
+
+*/
+body {
+  background: #121212;
+  padding: 40px 20px;
+}
+
+.gallery {
+  display: flex;
+}
+.gallery .item {
+  opacity: 0.8;
+  overflow: hidden;
+  margin: 20px;
+  position: relative;
+  flex: 500px 1 1;
+  transition: all 0.5s ease-in;
+}
+.gallery .item:hover {
+  flex: 1500px 3 3;
+  opacity: 1;
+}
+.gallery .item span {
+  background: #333 30% 70% no-repeat;
+  display: block;
+  height: 250px;
+}

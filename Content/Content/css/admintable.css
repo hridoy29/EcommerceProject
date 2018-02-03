@@ -1,0 +1,32 @@
+﻿h4{
+    font-weight:900;
+     font-size:large;
+     color:forestgreen;
+}
+
+dt{
+    font-weight:200;
+     font-size:large;
+    color:forestgreen;
+
+}
+dd{
+    font-weight:700;
+     padding:15px;
+     font-size:large;
+     color:#0094ff;
+}
+p{
+    font-weight:900;
+     padding:15px;
+      font-size:large;
+      color:forestgreen;
+}
+div{
+    font-weight:900;
+     font-size:large;
+     color:forestgreen;
+}
+th{
+font-weight:900;
+}
