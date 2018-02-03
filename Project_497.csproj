@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CA0BCED-D44C-4423-B951-90E365507E65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project_497</RootNamespace>
+    <AssemblyName>Project_497</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Chart.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Chart.Mvc.1.0.0.2\lib\net45\Chart.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryCreateUpdateDeleteController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\CRUDController.cs" />
+    <Compile Include="Controllers\feed_backController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PercentagesController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\productsDetailsController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\SubCategorysController.cs" />
+    <Compile Include="Controllers\Sub_CategoryController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Click_Difference.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\feed_back.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MetaData\MetaData.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Percentage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Sell.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategoryID.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap_lumen.css" />
+    <Content Include="Content\css\adminstyle.css" />
+    <Content Include="Content\css\admintable.css" />
+    <Content Include="Content\css\buttn.css" />
+    <Content Include="Content\css\cardstyle.css" />
+    <Content Include="Content\css\component.css" />
+    <Content Include="Content\css\contactstyle.css" />
+    <Content Include="Content\css\dca2a62ead9e3918731e868874832ad7--mens-fashion-styles-fashion-blogs.jpg" />
+    <Content Include="Content\css\default.css" />
+    <Content Include="Content\css\demo.css" />
+    <Content Include="Content\css\download.jpg" />
+    <Content Include="Content\css\footer-distributed-with-address-and-phones.css" />
+    <Content Include="Content\css\header.css" />
+    <Content Include="Content\css\hipster-958805_960_720.jpg" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\navstyle.css" />
+    <Content Include="Content\css\pageaboutstyle.css" />
+    <Content Include="Content\css\pexels-photo-325153.jpg" />
+    <Content Include="Content\css\pexels-photo-336372.jpeg" />
+    <Content Include="Content\css\pexels-photo-617963.jpeg" />
+    <Content Include="Content\css\product.css" />
+    <Content Include="Content\css\productstyle.css" />
+    <Content Include="Content\css\product_cart.css" />
+    <Content Include="Content\css\shopping-311924_960_720.png" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\stylecatagory.css" />
+    <Content Include="Content\css\teamstyle.css" />
+    <Content Include="Content\js\bootstrap-3.1.1.min.js" />
+    <Content Include="Content\js\carousel.css" />
+    <Content Include="Content\js\cbpHorizontalMenu.js" />
+    <Content Include="Content\js\cbpHorizontalMenu.min.js" />
+    <Content Include="Content\js\easyResponsiveTabs.js" />
+    <Content Include="Content\js\imagezoom.js" />
+    <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\jquery.countdown.js" />
+    <Content Include="Content\js\jquery.flexisel.js" />
+    <Content Include="Content\js\jquery.flexslider.js" />
+    <Content Include="Content\js\jquery.magnific-popup.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.wmuSlider.js" />
+    <Content Include="Content\js\login.js" />
+    <Content Include="Content\js\minicart.js" />
+    <Content Include="Content\js\modernizr.custom.js" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Multimidea\carosel_pic\fashion-glasses-go-pro-female-157888.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-135620.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-175689.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-285171.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-291762.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-298863.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-325153.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-325876.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-361758.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-373899.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-375880.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-531070.jpeg" />
+    <Content Include="Multimidea\carosel_pic\pexels-photo-58592.jpeg" />
+    <Content Include="Multimidea\carosel_pic\sku_916476319_1.jpg" />
+    <Content Include="Multimidea\image\0032690_huawei-e5573-4g-150mbps-lte-cat-4-pocket-mobile-wifi-international-version-unlocked-generic-original.jpg" />
+    <Content Include="Multimidea\image\0ee023eed3d249f732af147e7a71c10e--chiffon-maxi-skirts-skirt-maxi.jpg" />
+    <Content Include="Multimidea\image\1.jpg" />
+    <Content Include="Multimidea\image\11450256072200-RDSTR-Green-Casual-Shirt-541450256071685-1.jpg" />
+    <Content Include="Multimidea\image\11468832516475-RARE-Women-Tops-1041468832516238-1.jpg" />
+    <Content Include="Multimidea\image\11472625395883-Pannkh-Women-Navy-Blue-Solid-Regular-Top-7381472625395296-1.jpg" />
+    <Content Include="Multimidea\image\11474540685622-Moda-Rapido-Men-Grey-Melange-Solid-Round-Neck-T-Shirt-5121474540685508-2.jpg" />
+    <Content Include="Multimidea\image\11481114017962-Roadster-Men-Navy-Blue-Regular-Fit-Checked-Casual-Shirt-9921481114017680-1.jpg" />
+    <Content Include="Multimidea\image\11505365820780-Puma-Men-Grey-Printed-Round-Neck-T-shirt-7541505365820691-1.jpg" />
+    <Content Include="Multimidea\image\12ef8d755f0583f57eda45d187b0907d--mens-short-sleeve-shirts-short-shirts.jpg" />
+    <Content Include="Multimidea\image\188820060-front-grid.jpg" />
+    <Content Include="Multimidea\image\18d08dde312bd70fd3b2dbe705325b7f--tee-design-shirts-design.jpg" />
+    <Content Include="Multimidea\image\19912155_B_V1.jpg" />
+    <Content Include="Multimidea\image\1T7YM1VW.jpg" />
+    <Content Include="Multimidea\image\2017-NAVIFORCE-Mens-Watches-Top-Brand-Luxury-Men-s-Quartz-Watch-Waterproof-Sport-Military-Watches-Men.jpg" />
+    <Content Include="Multimidea\image\201707401958131hn1k2s5.jpg" />
+    <Content Include="Multimidea\image\284732_main.jpg" />
+    <Content Include="Multimidea\image\28690255616ec6a827b4b9d8ee9058ee--floral-shirts-men-floral-men.jpg" />
+    <Content Include="Multimidea\image\372337bc83ad98276497db75fc401ab9.jpg" />
+    <Content Include="Multimidea\image\4-lenovo-ideapad-310-laptop-core-i5-silver.jpg" />
+    <Content Include="Multimidea\image\419diC+ClOL._SY355_.jpg" />
+    <Content Include="Multimidea\image\41GzC6UZfML._SY355_.jpg" />
+    <Content Include="Multimidea\image\41HVwTG3bML._SY355_.jpg" />
+    <Content Include="Multimidea\image\41Wf7RaCxGL._SL500_AC_SS350_.jpg" />
+    <Content Include="Multimidea\image\4c0e0336239128be72d480f92b20213e.jpg" />
+    <Content Include="Multimidea\image\4c51580aaeea7c57aedbebfd564ca8c4--flannel-shirts-button-down-shirts.jpg" />
+    <Content Include="Multimidea\image\5890d06f-7b36-4813-b4af-238e9a6e24e6_1.8af806eceabe31fa26e7a77d302a5a16.jpg" />
+    <Content Include="Multimidea\image\615cfQ4qsBL._SL1024_.jpg" />
+    <Content Include="Multimidea\image\61LBNjUa4zL._SL1000_.jpg" />
+    <Content Include="Multimidea\image\61ULD9cG3qL._UL1500_.jpg" />
+    <Content Include="Multimidea\image\679a6b7aea97c35c4ab9ce10b53740a7--slim-fit-dress-shirts-mens-dress-shirts.jpg" />
+    <Content Include="Multimidea\image\76438_ypxl_1.jpg" />
+    <Content Include="Multimidea\image\7f0eec0c664ee614ced74c3a2d7e6e06--men-t-shirts-tshirt-men.jpg" />
+    <Content Include="Multimidea\image\81e0PjV70NL.jpg" />
+    <Content Include="Multimidea\image\81kBplcxieL._SY355_.jpg" />
+    <Content Include="Multimidea\image\8578430_fpx.jpg" />
+    <Content Include="Multimidea\image\86303_c1da597798785e93c4373382ba132a01_image1_search_big.jpg" />
+    <Content Include="Multimidea\image\8750903-1-green.jpg" />
+    <Content Include="Multimidea\image\8A0A3265-verge.0.0.jpg" />
+    <Content Include="Multimidea\image\91hSrK9ohDL._AC_UL320_SR196,320_.jpg" />
+    <Content Include="Multimidea\image\91HvLQYzB3L._SP500,500,0_.jpg" />
+    <Content Include="Multimidea\image\929576565_o.jpg" />
+    <Content Include="Multimidea\image\968702f67cd597ca9f6ab5f51b4a9acd--mens-polo-polo-tees.jpg" />
+    <Content Include="Multimidea\image\9eb4c3c3-2cc2-470d-b2c4-9e029d169b36_1.5492ee9e1fa4aa50c4873e2702cfc5ba.jpg" />
+    <Content Include="Multimidea\image\Acer Switch SW1-011-500x500.jpg" />
+    <Content Include="Multimidea\image\b278c0ec1b1e2067758b32e8ee19204b--business-laptop-dell-latitude.jpg" />
+    <Content Include="Multimidea\image\banner_mac.png" />
+    <Content Include="Multimidea\image\beige-latest-indian-wedding-reception-wear-crepe-saree-with-blouse-b17128-274.jpg" />
+    <Content Include="Multimidea\image\BGTVDD9_mk.jpg" />
+    <Content Include="Multimidea\image\blu-galaxy-watch-1.jpg" />
+    <Content Include="Multimidea\image\chiffon-floral-print-bohemian-style-blouses.jpg" />
+    <Content Include="Multimidea\image\contents-of-shuffle-box_xhaj.jpg" />
+    <Content Include="Multimidea\image\CV-18040-MFAB_34995514230--fab_valley-1483686888-Craftsvilla_1.jpg" />
+    <Content Include="Multimidea\image\d8a89609a9dac5995089b53ba9317cf3.jpg" />
+    <Content Include="Multimidea\image\Dell-Inspiron-15-7559-GAMING-I7559-5012GRY-in-lebanon.jpg" />
+    <Content Include="Multimidea\image\download %281%29.jpg" />
+    <Content Include="Multimidea\image\download.jpg" />
+    <Content Include="Multimidea\image\downloadj1.jpg" />
+    <Content Include="Multimidea\image\dress-shirts-fitguide_2.jpg" />
+    <Content Include="Multimidea\image\e52b4e0383aa191ee5309ac5ccc8dbd6--long-floral-skirts-long-blue-skirts.jpg" />
+    <Content Include="Multimidea\image\fab21b60dffb22394129f9945539c5b3--high-waisted-skirt-long-high-waisted-maxi-skirt-outfit.jpg" />
+    <Content Include="Multimidea\image\galaxy S8 64GB.jpg" />
+    <Content Include="Multimidea\image\ggr.jpg" />
+    <Content Include="Multimidea\image\greygw.jpg" />
+    <Content Include="Multimidea\image\gw1.jpg" />
+    <Content Include="Multimidea\image\gw2.jpg" />
+    <Content Include="Multimidea\image\hqdefault.jpg" />
+    <Content Include="Multimidea\image\huawei-gr5-2017-price-nepal-696x363.jpg" />
+    <Content Include="Multimidea\image\images.jpg" />
+    <Content Include="Multimidea\image\images.png" />
+    <Content Include="Multimidea\image\imageService.jpg" />
+    <Content Include="Multimidea\image\iphone-71.jpg" />
+    <Content Include="Multimidea\image\iPhone6.jpg" />
+    <Content Include="Multimidea\image\iPhone7 plus 32gb.jpg" />
+    <Content Include="Multimidea\image\ir586_030217_t_1023_1.jpg" />
+    <Content Include="Multimidea\image\JRGK-font-b-Smart-b-font-font-b-Watch-b-font-phone-waterproof-smartwatch-UC08-font.jpg" />
+    <Content Include="Multimidea\image\k735h2-i.jpg" />
+    <Content Include="Multimidea\image\kangana-ranaut-black-and-yellow-georgette-saree-790x1086.jpg" />
+    <Content Include="Multimidea\image\keep_calm_let_your_name_handle_it_personalize_t_shirt-r9a60f3d4456c418284611f29423b592e_k2gm8_540.jpg" />
+    <Content Include="Multimidea\image\ladies-long-sleeve-tops-500x500.jpg" />
+    <Content Include="Multimidea\image\laptop-inspiron-15-5000-FoggyNight-Intel-polaris-pdp-01.jpg" />
+    <Content Include="Multimidea\image\large.jpg" />
+    <Content Include="Multimidea\image\layered-skirt-1.jpg" />
+    <Content Include="Multimidea\image\macbook-air-gold-2015-16.jpg" />
+    <Content Include="Multimidea\image\mac_QTS.png" />
+    <Content Include="Multimidea\image\maxresdefault.jpg" />
+    <Content Include="Multimidea\image\MC516LLA.jpg" />
+    <Content Include="Multimidea\image\men-plain-formal-shirt-500x500.jpg" />
+    <Content Include="Multimidea\image\men-s-casual-shirt-500x500.jpg" />
+    <Content Include="Multimidea\image\mens-formal-shirts-1053273.jpg" />
+    <Content Include="Multimidea\image\nb._mens-executive-formal-shirt.jpg" />
+    <Content Include="Multimidea\image\Orignal-Xiaomi-Wireless-Bluetooth-4-1-Music-Sport-Earbuds---Black-386493-.jpg" />
+    <Content Include="Multimidea\image\p10-plus-side_1.jpg" />
+    <Content Include="Multimidea\image\product-hugerect-479727-188292-1427855235-812105160860fea6e41c3196c0cb1268.jpg" />
+    <Content Include="Multimidea\image\Q50-Smart-Watch-Dark-Blue-410944-.jpg" />
+    <Content Include="Multimidea\image\redmi4xmain.jpg" />
+    <Content Include="Multimidea\image\RS_1007_01-cr-750x1125.jpg" />
+    <Content Include="Multimidea\image\RS_1022_01-cr-750x1125.jpg" />
+    <Content Include="Multimidea\image\SAM.J7.PRIME-1.jpg" />
+    <Content Include="Multimidea\image\Samsung Galaxy S7 64GB.jpg" />
+    <Content Include="Multimidea\image\samsung-galaxy-j5_1461321792.jpeg" />
+    <Content Include="Multimidea\image\samy_sr_21018_1.jpg" />
+    <Content Include="Multimidea\image\SD_01_T57_5453_QP_X_EC_0.jpg" />
+    <Content Include="Multimidea\image\SEPVER-An1-smart-watch-phone-Android-mobile-smartwatch-with-touch-screen-camera-Bluetooth-WIFI-GPS-SIM.jpg" />
+    <Content Include="Multimidea\image\SHIKHA105SSSR001.jpg" />
+    <Content Include="Multimidea\image\sku_916476319_1.jpg" />
+    <Content Include="Multimidea\image\square_louped_HD_800_black-sq-01-sennheiser_400x.jpeg" />
+    <Content Include="Multimidea\image\ST2885- Floral Print Skirt-front-thumbnail.jpg" />
+    <Content Include="Multimidea\image\stylish_tops_to_wear_with_jeans_15.jpg" />
+    <Content Include="Multimidea\image\TT0TT01074_304_main_listing.jpg" />
+    <Content Include="Multimidea\image\tumblr_mow0xiYhDw1rmq596o1_500.jpg" />
+    <Content Include="Multimidea\image\women_mens_fashion_button.jpg" />
+    <Content Include="Multimidea\image\xiaomiredminote4-14-1494772838.jpg" />
+    <Content Include="Multimidea\image\zzzz.jpg" />
+    <Content Include="Multimidea\image\_101439371.jpg" />
+    <Content Include="Multimidea\imagnewe\6887f35c0a2df3c54566714f6fe9ebe7--retro-pink-kitchens-dream-kitchens.jpg" />
+    <Content Include="Multimidea\imagnewe\fridge freezer.jpg" />
+    <Content Include="Multimidea\imagnewe\metro.jpg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-110644.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-143654 %281%29.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-164437.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-196661.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-226664.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-234220.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-264554.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-264591.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-265741.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-265958.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-267181.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-297933.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-322207.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-324655.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-370659.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-375897.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-439227.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-50614.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-569163.jpeg" />
+    <Content Include="Multimidea\imagnewe\pexels-photo-699459.jpeg" />
+    <Content Include="Multimidea\imagnewe\samsung-galaxy-s8-design.jpg" />
+    <Content Include="Multimidea\imagnewe\steinhart-titanium-watch.jpg" />
+    <Content Include="Multimidea\imagnewe\vegetables-vegetable-basket-harvest-garden.jpg" />
+    <Content Include="Multimidea\imagnewe\Vintage-Home-Decor-Trends-That-Should-Have-Never-Gone-Out-of-Style-5-765x765.jpg" />
+    <Content Include="Multimidea\imagnewe\vintage-music-business-shop.jpg" />
+    <Content Include="Multimidea\imagnewe\wood-night-camera-vintage.jpg" />
+    <Content Include="Multimidea\NewImageForProd\0002676_samsung-srf717cdbls-719l-ice-water-french-door-fridge-freezer.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\002e3gxgh_w1200_h1200.jpg" />
+    <Content Include="Multimidea\NewImageForProd\0030two3u_w1200_h1200.jpg" />
+    <Content Include="Multimidea\NewImageForProd\05440-1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\1.-e1473839655648-1024x681.jpg" />
+    <Content Include="Multimidea\NewImageForProd\10178381_50943 %28ZoomImage%29.jpg" />
+    <Content Include="Multimidea\NewImageForProd\10317673.jpg" />
+    <Content Include="Multimidea\NewImageForProd\10545311_1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\10567347.jpg" />
+    <Content Include="Multimidea\NewImageForProd\1_f288b3b2-7d0c-43eb-bf45-7209a72b389c.jpg" />
+    <Content Include="Multimidea\NewImageForProd\2015-Fashion-Leisure-Street-Mens-Jeans-Ripped-Jeans-Men-Summer-Style-Harem-Denim-Overalls-Ankle-Length-800x700.jpg" />
+    <Content Include="Multimidea\NewImageForProd\20c2da98-23b6-42c0-99ff-3719a352c2a8_1.d7738944df20f5cd082a4c5d826986b0.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\23-828-003-28.jpg" />
+    <Content Include="Multimidea\NewImageForProd\23-828-007-01.jpg" />
+    <Content Include="Multimidea\NewImageForProd\389749_20161110103637_4787r4_600x600.jpg" />
+    <Content Include="Multimidea\NewImageForProd\3c370344b0daf6acacdc077a80bcd166--glass-doors-kitchen-appliances.jpg" />
+    <Content Include="Multimidea\NewImageForProd\404995_001_ss_01.jpg" />
+    <Content Include="Multimidea\NewImageForProd\41EGpPYlhzL.jpg" />
+    <Content Include="Multimidea\NewImageForProd\41ovBGkIUbL.jpg" />
+    <Content Include="Multimidea\NewImageForProd\49109619_Alt02.jpg" />
+    <Content Include="Multimidea\NewImageForProd\50045802_498473 %28ZoomImage%29.jpg" />
+    <Content Include="Multimidea\NewImageForProd\50d1327e0f1d75a5227ec2e9f37e62bb--winter-fashion-outfits-boy-fashion.jpg" />
+    <Content Include="Multimidea\NewImageForProd\51afmp6B3YL.jpg" />
+    <Content Include="Multimidea\NewImageForProd\51dkCXWyMQL.jpg" />
+    <Content Include="Multimidea\NewImageForProd\5225211428_1_1_3.jpg" />
+    <Content Include="Multimidea\NewImageForProd\5436662_R_SET.jpg" />
+    <Content Include="Multimidea\NewImageForProd\5545175_R_Z002A.jpg" />
+    <Content Include="Multimidea\NewImageForProd\554d3901e95cf41224460317958e2622--mens-jeans-jeans-for-men.jpg" />
+    <Content Include="Multimidea\NewImageForProd\55POS901F_12-IMS-en_GB.jpg" />
+    <Content Include="Multimidea\NewImageForProd\5784235_R_Z001A.jpg" />
+    <Content Include="Multimidea\NewImageForProd\611KqDDKXCL._SL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\61cbAQatNlL._UL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\61tRRqQWpVL._UY395_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\65212_1_cuisinart-compact-brushed-st-steel-blender-chopper-system-set-of-15.jpg" />
+    <Content Include="Multimidea\NewImageForProd\714sb6gwMpL._UL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\71Qu5EQm0PL._SL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\71YHZimeiSL._SX466_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\7296301-whirlpool-205-genius-cls-plus-4s-190-l-single-door-refrigerator-wine-titanium-picture-large.jpg" />
+    <Content Include="Multimidea\NewImageForProd\7c903785251ac8a15157b1e1e6513644--fashion-for-teens-winter-summer-clothes-for-teens.jpg" />
+    <Content Include="Multimidea\NewImageForProd\81-VY89JV9L._SX522_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\811+I6HGTxL._SL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\9104qxAKfVS._UL1500_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\999999-836321007028_2.jpg" />
+    <Content Include="Multimidea\NewImageForProd\9ddf090ccf80c9b9d1bf58bfde5e9571--bohemian-winter-fashion-bohemian-style-clothing-winter.jpg" />
+    <Content Include="Multimidea\NewImageForProd\a9.b5.c3.180993side.jpg" />
+    <Content Include="Multimidea\NewImageForProd\adorable-orange-patch-border-work-resham-embroidery-and-zari-work-georgette-traditional-saree-13303-790x1086.jpg" />
+    <Content Include="Multimidea\NewImageForProd\AYWSASA10008520_20161111165941_0_650.jpg" />
+    <Content Include="Multimidea\NewImageForProd\B00318CGIC-2.jpg" />
+    <Content Include="Multimidea\NewImageForProd\b45a6a16-b910-432e-bb14-b7cfb8716bfc_1.05bafaadb030f5f1e40a050002a83a8e.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\Best-Washing-Machines.jpg" />
+    <Content Include="Multimidea\NewImageForProd\black-ice-whirlpool-french-door-refrigerators-wrf757sdee-64_1000.jpg" />
+    <Content Include="Multimidea\NewImageForProd\C7D8NC4W0AAYnCw.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Carrier-1.5-Ton-Energy-Saving-Wall-Split-924x784.jpg" />
+    <Content Include="Multimidea\NewImageForProd\childcarefundingJPG.jpg" />
+    <Content Include="Multimidea\NewImageForProd\comfy-sweater-dresses-for-cold-weather-7.jpg" />
+    <Content Include="Multimidea\NewImageForProd\cq_ck_1493593971067.jpg" />
+    <Content Include="Multimidea\NewImageForProd\dakota-casual-sports-shoes-dakota-sport-casuals-white-imagehero.jpg" />
+    <Content Include="Multimidea\NewImageForProd\daskeyboard-4-professional_-_Brown_1024x1024.png" />
+    <Content Include="Multimidea\NewImageForProd\dell-optiplex-9010-1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Dell_Inspiron_One_2330_3549328401.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Dell_XPS_One_35485706_01.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Dhakai-Jamdani-Saree.jpg_350x350.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Diesel-Res_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Double_Door_Display_Fridge_Freezer.jpg_zoom.jpg" />
+    <Content Include="Multimidea\NewImageForProd\er_photo_194065.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Euromaid-GG90S-Freestanding-Upright-Gas-Oven-high.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\f137532f19b313191d3493b009ad7c75_0_0_original.jpg" />
+    <Content Include="Multimidea\NewImageForProd\file.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Free-washing-machine-collection.jpg" />
+    <Content Include="Multimidea\NewImageForProd\images.jpg" />
+    <Content Include="Multimidea\NewImageForProd\imarflex-ir-180t-flat-iron-blacksilver-1450137922-90911-1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\inalsa-oscar-original-imaehgceykzzwg9w.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\item_1990812_135.jpg" />
+    <Content Include="Multimidea\NewImageForProd\item_XL_11644566_16745782.jpg" />
+    <Content Include="Multimidea\NewImageForProd\jeans-for-men-style-jean-yu-beauty-uwlzaro-.jpg" />
+    <Content Include="Multimidea\NewImageForProd\KRMSASA10009046_20161126132025_0_650.jpg" />
+    <Content Include="Multimidea\NewImageForProd\la-italio-shoes-lounge-842-pakistan-fashion-mens-shoes-islamabad-online-shopping6a_1024x1024.jpg" />
+    <Content Include="Multimidea\NewImageForProd\lacoste-carnaby-evo-bl-1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\lacw0018003_cnavy.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Large-940x620-8_revise_20an.jpg" />
+    <Content Include="Multimidea\NewImageForProd\LG-Giant-C-commercial-laundry-machines.jpg" />
+    <Content Include="Multimidea\NewImageForProd\linden-store-tile.png" />
+    <Content Include="Multimidea\NewImageForProd\ls195.jpg" />
+    <Content Include="Multimidea\NewImageForProd\l_09809580_004.jpg" />
+    <Content Include="Multimidea\NewImageForProd\l_10135266_003.jpg" />
+    <Content Include="Multimidea\NewImageForProd\l_10141248_001.jpg" />
+    <Content Include="Multimidea\NewImageForProd\main-qimg-ec30945c8fb1fb4ded6b58026527d1fc-c.jpg" />
+    <Content Include="Multimidea\NewImageForProd\male-watch-wrist-watch-packshot-time-68201.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\Mini_Glass_Door_Bar_Fridge_Model_EC68-SSH-%281%29.jpg" />
+    <Content Include="Multimidea\NewImageForProd\nkjl-930-7-sukun-blue-original-imaerxjkaemqqxud.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\org_20140923173947.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Orion_featuress.jpg" />
+    <Content Include="Multimidea\NewImageForProd\p._V293117552_.jpg" />
+    <Content Include="Multimidea\NewImageForProd\pao-escarpins-cuir-noir.jpg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo %281%29.jpg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-179909.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-280268.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-280324.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-326502.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-450035.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-552041.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-592815.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\pexels-photo-675762.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\phoenix_gold_1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Razer-Basilisk-FPS-Gaming-Mouse.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Red_High_Heel_Pumps.jpg" />
+    <Content Include="Multimidea\NewImageForProd\s-l500.jpg" />
+    <Content Include="Multimidea\NewImageForProd\saaa29971a-yellow-kanjivaram-silk-saree-with-embroidery-work.jpg" />
+    <Content Include="Multimidea\NewImageForProd\SAMSUNG-32-INCH-LED-TV-H4500.jpg" />
+    <Content Include="Multimidea\NewImageForProd\samsung-ua49ku7500-multi-system-ultra-hd-led-tv.jpg" />
+    <Content Include="Multimidea\NewImageForProd\samsung_un28h4000afxza_un28h4000_28_smart_led_1026277.jpg" />
+    <Content Include="Multimidea\NewImageForProd\SB46_2059_23480.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Schmick_68Litre_Tropical_Rated_Mini_Glass_Door_Bar_Fridge_Model_EC68L-SSH-%282%29.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Screen_Shot_2017_10_17_at_8.11.53_AM.0.png" />
+    <Content Include="Multimidea\NewImageForProd\series-showcase-hero-tablet2.jpg" />
+    <Content Include="Multimidea\NewImageForProd\shoes-heels-sexy-ultra-high-sequins-high-heeled-xnfmfol-.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Soho-Jeans-Panel-Hem-Curvy-Boyfriend-Blue-Mix-Wash_04606141_887.jpg" />
+    <Content Include="Multimidea\NewImageForProd\source_GSASASA10005230_20160627163837_0.JPEG" />
+    <Content Include="Multimidea\NewImageForProd\STO10509521RD_1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\street-style-knitted-scarf.jpg" />
+    <Content Include="Multimidea\NewImageForProd\the-best-mechanical-keyboards-of-2017_uuvk.jpg" />
+    <Content Include="Multimidea\NewImageForProd\TJ275DXP301-Ramco-Jean-1.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Toshiba_L5400.jpg" />
+    <Content Include="Multimidea\NewImageForProd\tumblr_inline_n1wo51W55G1szj778.jpg" />
+    <Content Include="Multimidea\NewImageForProd\Typewriter.jpg" />
+    <Content Include="Multimidea\NewImageForProd\u_21888525.jpg" />
+    <Content Include="Multimidea\NewImageForProd\washer_dryer.jpg" />
+    <Content Include="Multimidea\NewImageForProd\watch-fashion-accessories-clothes-157627.jpeg" />
+    <Content Include="Multimidea\NewImageForProd\yellow-handloom-kanchipuram-kora-pure-silk-saree-92b.jpg" />
+    <Content Include="Multimidea\NewImageForProd\ZALDO529_OUT_LG.jpg" />
+    <Content Include="Multimidea\NewImageForProd\ZCCD074_OUT_LG.jpg" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Homeold\About.cshtml" />
+    <Content Include="Views\Homeold\Contact.cshtml" />
+    <Content Include="Views\Homeold\Index.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Layout\LayoutPage.cshtml" />
+    <Content Include="Views\CategoryCreateUpdateDelete\Create.cshtml" />
+    <Content Include="Views\CategoryCreateUpdateDelete\Delete.cshtml" />
+    <Content Include="Views\CategoryCreateUpdateDelete\Details.cshtml" />
+    <Content Include="Views\CategoryCreateUpdateDelete\Edit.cshtml" />
+    <Content Include="Views\CategoryCreateUpdateDelete\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Category\Categorypartial.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\View.cshtml" />
+    <Content Include="Views\Registration\Create.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Product\Improve.cshtml" />
+    <Content Include="Views\productsDetails\BuyProduct.cshtml" />
+    <Content Include="Views\Product\Need.cshtml" />
+    <Content Include="Views\productsDetails\Search.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Product\PurchaseSuggestion.cshtml" />
+    <Content Include="Views\Product\SearchForSuggestion.cshtml" />
+    <Content Include="Views\CRUD\Create.cshtml" />
+    <Content Include="Views\CRUD\Delete.cshtml" />
+    <Content Include="Views\CRUD\Details.cshtml" />
+    <Content Include="Views\CRUD\Edit.cshtml" />
+    <Content Include="Views\CRUD\Index.cshtml" />
+    <Content Include="Views\Sub_Category\SubCategorypartial.cshtml" />
+    <Content Include="Views\productsDetails\PurchaseSuggestionForAdmin.cshtml" />
+    <Content Include="Views\productsDetails\DailySell.cshtml" />
+    <Content Include="Views\Product\Search_for_Daily_sell.cshtml" />
+    <Content Include="Views\SubCategorys\Create.cshtml" />
+    <Content Include="Views\SubCategorys\Delete.cshtml" />
+    <Content Include="Views\SubCategorys\Details.cshtml" />
+    <Content Include="Views\SubCategorys\Edit.cshtml" />
+    <Content Include="Views\SubCategorys\Index.cshtml" />
+    <Content Include="Views\productsDetails\predections.cshtml" />
+    <Content Include="Views\Percentages\Create.cshtml" />
+    <Content Include="Views\Percentages\Delete.cshtml" />
+    <Content Include="Views\Percentages\Details.cshtml" />
+    <Content Include="Views\Percentages\Edit.cshtml" />
+    <Content Include="Views\Percentages\Index.cshtml" />
+    <Content Include="Views\feed_back\Create.cshtml" />
+    <Content Include="Views\feed_back\Delete.cshtml" />
+    <Content Include="Views\feed_back\Details.cshtml" />
+    <Content Include="Views\feed_back\Edit.cshtml" />
+    <Content Include="Views\feed_back\Index.cshtml" />
+    <Content Include="Views\productsDetails\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60885</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44320/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
