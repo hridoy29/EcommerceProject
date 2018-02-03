@@ -1,0 +1,117 @@
+﻿@model Project_497.Models.product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+<div style="padding:50px"></div>
+<link href="~/Content/css/admintable.css" rel="stylesheet" />
+<h2>Details</h2>
+
+<div>
+    <h4>product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <a href="#"><img src="@Url.Content("~/Multimidea/image/" + Model.image)" class="img-responsive img-thumbnail" /></a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+
+        
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Buy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.name)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategoryID1.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCategoryID1.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sellStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sellStartDate)
+        
+        </dd>
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.offerImage)
+
+        </dt>
+       
+        <dd>
+            <a href="#"><img src="@Url.Content("~/Multimidea/image/" + Model.offerImage)" class="img-responsive img-thumbnail" /></a>
+           
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.offerDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerAvailable)
+        </dd>
+
+       
+
+     
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.productId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

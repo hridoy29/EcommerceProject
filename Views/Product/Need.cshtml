@@ -1,0 +1,130 @@
+﻿@using Project_497.Models
+@*@model List<product>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<product>
+
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+<div style="padding:50px"></div>
+@* for search *@
+@using (Html.BeginForm("Search", "Product", FormMethod.Get))
+{
+    <div>
+        <input type="text" name="q" />&nbsp;
+        <input type="submit" value="Search" id="btnSubmit" class="btn btn-primary" /><span></span>
+    </div>
+}
+
+
+
+                       
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style= "background-color:rgb(123,209,209)">
+    <tr class="text-primary ">
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().productName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.First().January)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().February)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().March)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().April)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().May)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().June)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().July)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().August)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().September)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().October)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().November)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().December)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="#"><img src="@Url.Content("~/Multimidea/image/" + item.image)" class="img-responsive img-thumbnail" style="width:300px;height:200px"/></a>
+            </td>
+            <td >
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.January)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.February)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.March)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.April)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.May)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.June)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.July)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.August)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.September)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.October)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.November)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.December)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+@*page@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount*@
+<div class="=Div-Pagination" style="padding:80px">
+    @Html.PagedListPager(Model,page=>Url.Action("Need",new { page = page }))
+</div>

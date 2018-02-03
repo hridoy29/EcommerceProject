@@ -1,0 +1,122 @@
+﻿
+@using Project_497.Models
+@*@model List<product>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<product>
+
+<link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/Content/css/product.css" rel="stylesheet" />
+<style>
+    .custome-div {
+        margin: 3px;
+        min-height: 300px;
+        text-align: center;
+        font-size: medium;
+        font-style:normal;
+    }
+</style>
+@*<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                @foreach (var item in Model)
+            {
+                    <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                        <img src="@Url.Content("~/Multimidea/image/"+item.image)" class="btn btn-block img-responsive img-thumbnail" style="width:350px;height:200px" />
+                    </a>
+                    <div class="overlay">
+                        <h2>Hover effect 1v2</h2>
+                        <a class="info" href="#">link here</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>*@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 ">
+            
+                @foreach (var item in Model)
+            {
+                    
+                        <div class="col-sm-2 custome-div" style="height:200px;width:350px;padding:40px">
+                            <div class="hovereffect">
+                                <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                                    <img src="@Url.Content("~/Multimidea/image/"+item.image)" class="btn btn-block img-responsive img-thumbnail" />
+                                </a>
+                                <div class="overlay">
+                                    <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                                        <h2> <label>Name:<label> </label> </label>@Html.DisplayFor(modelItem => item.productName)</h2>
+                                   </a>
+                                    <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                                        <h2> <label>Price:<label> </label> </label>@Html.DisplayFor(modelItem => item.price)</h2>
+                                        </a>
+                                        <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                                            <h2><label>Click:<label> </label> </label>@Html.DisplayFor(modelItem => item.click)</h2>
+                                            </a>
+
+</div>
+                                </div>
+                    </div>
+                }
+                    
+        </div>
+    </div>
+</div>
+            @*page@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount*@
+            <div class="=Div-Pagination" style="padding:80px">
+                @*@Html.PagedListPager(Model,page=>Url.Action("Index",new { page = page }))*@
+
+                <!--For devide product into different category we use it category=viewbag.category-->
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, category = ViewBag.category }),
+      new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @*<tr>
+
+                    <th>
+                        <label>  </label>
+                    </th>
+                    <th>
+                        <label>Product Name</label>
+                    </th>
+
+                    <th>
+                        <label>Price</label>
+                    </th>
+
+                    <th>
+                        <label>Click</label>
+                    </th>
+
+                    <th></th>
+                </tr>*@

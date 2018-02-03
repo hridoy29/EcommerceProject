@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Project_497.Models.Percentage>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div style="padding:50px"></div>
+
+
+        @Html.ActionLink("Improve","Improve", "Product", new { area = "" }, new { @class = "navbar-brand" })
+  
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+    <tr>
+    <tr>
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.percentage1)
+        </th>
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th class="text-center text-success" style="font-weight:900">Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.percentage1)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td class="text-center">
+                @Html.ActionLink("Edit", "Edit", new { id = item.percentageId }, new { @class = "btn btn-warning btn-large" }) 
+                @*@Html.ActionLink("Details", "Details", new { id=item.percentageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.percentageId })*@
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Project_497.Models.product>
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+<div style="padding:50px"></div>
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr>
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.productId)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+
+      
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.predection)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.productId)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            
+
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.predection)
+            </td>
+
+        </tr>
+    }
+
+</table>

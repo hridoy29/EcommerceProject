@@ -1,0 +1,61 @@
+﻿@model Project_497.Models.feed_back
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="font-weight:400;
+     font-size:large;
+    color:forestgreen
+">
+            @Html.DisplayNameFor(model => model.customer_Name)
+        </dt>
+
+        <dd style="font-weight:200;
+    
+     font-size:large">
+            @Html.DisplayFor(model => model.customer_Name)
+        </dd>
+
+        <dt style="font-weight:400;
+     font-size:large;
+    color:forestgreen
+">
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd style="font-weight:200;
+
+     font-size:large; color:dodgerblue">
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt style="font-weight:400;
+     font-size:large;
+    color:forestgreen
+">
+            @Html.DisplayNameFor(model => model.message)
+        </dt>
+
+         <dd style="font-weight:200;
+    
+     font-size:large">
+            @Html.DisplayFor(model => model.message)
+        </dd>
+
+    </dl>
+</div>
+<p style="font-weight:900;
+     padding:15px;
+      font-size:large;
+      color:forestgreen">
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

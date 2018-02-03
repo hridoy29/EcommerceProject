@@ -1,0 +1,16 @@
+﻿@using Project_497.Models
+
+@model List<SubCategoryID>
+<ul class="nav navbar-nav navbar-static-top">
+    @{
+        foreach (var item in Model)
+        {
+
+            <li>@Html.ActionLink(@item.name, "Index", "Product", new { page = 1, category = item.SubCategoryID1 }, null)</li>
+
+        }
+
+    }
+
+</ul>
+

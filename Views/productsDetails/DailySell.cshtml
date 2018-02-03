@@ -1,0 +1,66 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Project_497.Models.Product_Sell>
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+<div style="padding:50px"></div>
+<div class="navbar-static" role="navigation">
+
+    @using (Html.BeginForm("Search_for_Daily_sell", "Product", FormMethod.Get))
+    {
+        <div>
+            <input type="text" name="q"/>&nbsp;
+            <input type="submit" value="Search" id="btnSubmit" class="btn btn-primary" /><span></span>
+        </div>
+    }
+
+</div>
+    <table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.First().productName)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.First().price)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.First().sellEndDate)
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+
+            <td class="text-center">
+
+                @Html.DisplayFor(modelItem => item.sellEndDate)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div class="=Div-Pagination" style="padding:80px">
+
+    @Html.PagedListPager(Model, page=>Url.Action("DailySell",new { page = page }))
+
+    </div>

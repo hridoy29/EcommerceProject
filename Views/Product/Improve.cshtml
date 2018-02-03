@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Project_497.Models.product>
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div style="padding:50px"></div>
+   @*<ul> <li style="font-weight:900">@Html.ActionLink("Admin", "Index", "Admin", new { @class = "navbar-brand" })</li>*@
+
+
+@Html.ActionLink("Product Boost Up", "Index", "Percentages", new { area = "" }, new { @class = "navbar-brand" })
+@Html.ActionLink("Admin", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+
+
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr>
+        <th class="text-center text-success" style="font-weight:900">
+
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+
+            @Html.DisplayNameFor(model => model.click)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+
+            @Html.DisplayNameFor(model => model.previous_click)
+        </th>
+        <th class="text-center text-success" style="font-weight:900">
+
+            @Html.DisplayNameFor(model => model.count_improvment)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.click)
+            </td>
+
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.previous_click)
+            </td>
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.count_improvment)
+            </td>
+
+        </tr>
+    }
+
+</table>

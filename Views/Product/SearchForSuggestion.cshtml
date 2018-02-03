@@ -1,0 +1,28 @@
+﻿
+
+    @model Project_497.Models.product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+ 
+@if (Model.PredectionResult > Model.Buy)
+{
+
+    <p ><h2 class="text-center text-success">YOU NEED @Html.DisplayFor(model => model.Result)</h2> <h1 class="text-center text-primary"> @Html.DisplayFor(model => model.productName)</h1><h2 class="text-center text-success" > IN THE NEXT MONTH</h2></p>
+
+}
+
+else if (Model.PredectionResult == Model.Buy)
+{
+
+     <text><h2 class="text-center text-success">You do not need any Product</h2></text>;
+}
+else
+{
+ <text><h2 class="text-center text-success">You don't need any Product</h2></text>;
+}

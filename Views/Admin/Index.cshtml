@@ -1,0 +1,158 @@
+﻿@model Project_497.Models.Percentage
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+    
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vertical Nav thingy</title>
+    <script>
+    $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    </script>
+    
+    <link href="~/Content/css/adminstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <div id="message" align="center" class="container-fluid "style="color:black;font-size:30px;font-weight:700"> <strong>Admin Panel</strong></div>
+
+        <div id="page-wrap" align="center">
+            <div id="all">
+                <ul>
+                    <li style="float: right;">@Html.ActionLink("Logout", "Logout", "Login"@*, new { area = "" }, new { @class = "navbar-brand text-danger" }*@)</li>
+                    <li style="float: right;">@Html.ActionLink("Admin Registration", "Create", "Registration"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+
+                </ul>
+                <ul>
+                    <li>@Html.ActionLink("Add Sub Category", "Index", "SubCategorys"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Add New Category", "Index", "CategoryCreateUpdateDelete"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Add New Product", "Index", "CRUD"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Product Boost Up", "Index", "Percentages"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Monitor Product Reach", "Improve", "Product"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                </ul>
+                <ul>
+                    <li>@Html.ActionLink("Sell In The Month", "Need", "Product"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Daily Sell Update", "DailySell", "productsDetails"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Purchase suggestion", "PurchaseSuggestionForAdmin", "productsDetails"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Predection", "predections", "productsDetails"@*, new { area = "" }, new { @class = "navbar-brand" }*@)</li>
+                    <li>@Html.ActionLink("Customer Feedback", "Index", "feed_back")</li>
+                </ul>
+
+            </div>
+        </div>
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+     
+        <div style="padding:380px">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Admin</h2>
+
+<div class="container">
+    <ul class="nav navbar-nav navbar-static-top ">
+      
+        <li>@Html.ActionLink("Add Sub Category", "Index", "SubCategorys", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Add New Category", "Index", "CategoryCreateUpdateDelete", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Add New Product", "Index", "CRUD", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Add Noise", "Index", "Percentages", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Monitor Product Reach", "Improve", "Product", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Sell In The Month", "Need", "Product", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Daily Sell Update", "DailySell", "productsDetails", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Purchase suggestion", "PurchaseSuggestionForAdmin", "productsDetails", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Predection", "predections", "productsDetails", new { area = "" }, new { @class = "navbar-brand" })</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>  @Html.ActionLink("Logout", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand text-danger" })</li>
+
+
+        <li>@Html.ActionLink("Admin Registration", "Create", "Registration", new { area = "" }, new { @class = "navbar-brand" })</li>
+
+
+    </ul>
+    
+</div>*@
+@*<div><p>User Name:@Session["userName"].ToString()</P></div>*@
+@*<div>
+
+    @using (Html.BeginForm("Edit", " Product"))
+    {
+      @Html.AntiForgeryToken()
+
+      <div class="form-horizontal">
+          <h4>Percentage</h4>
+          <hr />
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+          @Html.EditorFor(model => model.percentage1)
+
+          <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                  <input type="submit" value="Save" class="btn btn-default" />
+              </div>
+          </div>
+      </div>
+    }
+    </div>*@

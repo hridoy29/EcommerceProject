@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Project_497.Models.Product_Sell>
+    @{ 
+        if (Session["UserId"] == null)
+        {
+            Response.Redirect("~/Login/Index");
+        }
+    }
+<div style="padding:50px"></div>
+<p style="font-size:larger; padding:10px; font-weight:900">
+
+    @Html.ActionLink("Daily Sell Update", "DailySell", "productsDetails")
+</p>
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.sellEndDate)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center ">
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.sellEndDate)
+
+</tr>
+    }
+
+</table>

@@ -1,0 +1,172 @@
+﻿@model Project_497.Models.product
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+<div style="padding:40px"></div>
+
+<h2>Details</h2>
+@*<p>@Html.ActionLink("<<Back", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })</p>*@
+
+<div>
+
+    @*<hr />*@
+    <dl class="dl-horizontal">
+        
+           
+
+
+                @if (Model.Buy > 0)
+                {
+
+                    
+            <dd>
+                <img src='@Url.Content("~/Multimidea/image/"+Model.image)'class="img-responsive img-thumbnail" style="width:400px;height:400px" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.productName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.productName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+
+
+
+            <dd>
+                <a href="#"><img src='@Url.Content("~/Multimidea/image/" + Model.offerImage)' class="img-responsive img-thumbnail"  /></a>
+            </dd>
+
+            <dd class="text-primary">
+                @Html.DisplayFor(model => model.offerDetails)
+            </dd>
+
+            <dt class="text-primary ">
+                @Html.DisplayNameFor(model => model.Buy)
+            </dt>
+            <dd class="text-danger">
+                @Html.DisplayFor(model => model.Buy)
+            </dd>
+           
+     }
+                else
+                {
+                    <dd>
+                        <img src='@Url.Content("~/Multimidea/image/"+Model.image)'class="img-responsive img-thumbnail" style="width:400px;height:400px" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.productName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.productName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.price)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.price)
+                    </dd>
+
+                    <dd>
+                        <a href="#"><img src='@Url.Content("~/Multimidea/image/" + Model.offerImage)' class="img-responsive img-thumbnail" /></a>
+                    </dd>
+
+                    <dd class="text-primary">
+                        @Html.DisplayFor(model => model.offerDetails)
+                    </dd>
+
+                    <dt class="text-primary ">
+                        @Html.DisplayNameFor(model => model.Buy)
+                    </dt>
+                    <dd class="text-danger">
+                        <p>SOULD OUT</p>
+                    </dd>
+                }
+               
+
+                <dt>
+                    <a href="@Url.Action("BuyProduct", "productsDetails", new { id=Model.productId}) ">
+                        <input id="Button1" type="button" value="BUY NOW" class="btn btn-success btn-xs btn-sm" />
+                    </a>
+                </dt>
+            </dl>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.offerDetails)
+            </dt>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.sellStartDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sellStartDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.sellEndDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sellEndDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.isNew)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isNew)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.click)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.click)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Admin.userName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Admin.userName)
+            </dd>*@

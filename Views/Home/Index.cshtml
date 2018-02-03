@@ -1,0 +1,560 @@
+﻿@model Project_497.Models.feed_back
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    //int data = ViewBag.name;  @*pass data from controller to view*@
+}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet">
+<link href="@Url.Content("~/css/carousel.css")" rel="stylesheet">
+<link href="~/Content/js/carousel.css" rel="stylesheet" />
+<script src="~/Content/js/bootstrap-3.1.1.min.js"></script>
+<script src="~/Content/js/jquery.min.js"></script>
+<link href="~/Content/css/buttn.css" rel="stylesheet" />
+@* search *@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css/style.css">
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<script src="~/Content/js/index.js"></script>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>about us</title>
+<link rel="stylesheet" href="css/pageaboutstyle.css">
+<link href="https://fonts.googleapis.com/css?family=Anton|Archivo+Black" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href="~/Content/css/pageaboutstyle.css" rel="stylesheet" />
+
+
+
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel="stylesheet" href="css/contactstyle.css">
+<link href="~/Content/css/contactstyle.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
+
+<div style="padding:20px"></div>
+@* Home Page Body *@
+@*@using (Html.BeginForm("Search", "productsDetails", FormMethod.Get))
+    {
+        <div class="wrapper">
+            <input placeholder="Search..." class="myinput" />
+            <div class="search" onclick="openInput()">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+
+            <script src="js/index.js"></script>
+
+    }*@
+<div style="padding:20px"></div>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+
+
+
+            <img src="~/Multimidea/carosel_pic/pexels-photo-325153.jpeg" alt="First slide">
+            <div class="container">
+
+                <div class="carousel-caption">
+                    <h1 style="color:red;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Welcome to our Online Store.</h1>
+                    <p style="text-align:start;color:#1d3481;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">The biggest online Shop.</p>
+                    <p style="text-align:start;color:azure;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"><a class="btn btn-sm animated-button victoria-one" style="width:150px" href=@Url.Action("Index","Product") role="button">Click</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+
+
+
+            <img src="~/Multimidea/carosel_pic/pexels-photo-175689.jpeg" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 style="color:red;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Get your Gift.</h1>
+                    <p style="color:#1d3481; text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Gifts are hidden in random products,if you are lucky the gift will be your's.</p>
+                    <p style="color:azure;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"><a class="btn btn-sm animated-button victoria-one" style="width:150px" href="Product?page=5" role="button">Click</a></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="item">
+
+            <img src="~/Multimidea/carosel_pic/pexels-photo-325876.jpeg" alt="Third slide">
+            <div class="container">
+
+                <div class="carousel-caption">
+                    <h1 style="color:red;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Thank You for visiting our store.</h1>
+                    <p style="color:#1d3481; text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">We are happy to serve you.</p>
+                    <p style="color:azure;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"><a class="btn btn-sm animated-button victoria-one" style="width:150px" href=@Url.Action("Index","Product") role="button">Click</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+
+            <img src="~/Multimidea/carosel_pic/pexels-photo-58592.jpeg" alt="Forth slide">
+            <div class="container">
+
+                <div class="carousel-caption">
+                    <h1 style="color:#157d06;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Thank You for visiting our store.</h1>
+                    <p style="color:#f1e50a; text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">We are happy to serve you.</p>
+                    <p style="color:azure;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"><a class="btn btn-sm animated-button victoria-one" style="width:150px" href=@Url.Action("Index","Product") role="button">Click</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+
+            <img src="~/Multimidea/carosel_pic/pexels-photo-298863.jpeg" alt="Fifth slide">
+            <div class="container">
+
+                <div class="carousel-caption">
+                    <h1 style="color:#8b0000; text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">Thank You for visiting our store.</h1>
+                    <p style="color:#1d3481; text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;">We are happy to serve you.</p>
+                    <p style="color:azure;text-align:start;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"><a class="btn btn-sm animated-button victoria-one" style="width:150px" href=@Url.Action("Index","Product") role="button">Click</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<div style="padding:20px"></div>
+@* carosel ses *@
+
+@*<p>@ViewBag.name</p>*@    @*pass data from controller to view*@
+
+@*About shuru*@
+<div class="container" style="background:#eff3f9">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <h1> About </h1>
+        <h2> Making life easier.</h2>
+        <p> Here you can find most exclusive products with great price.</p>
+        <p> We'll provide you with best quality shopping experience.</p>
+
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="float:right;">
+        <div class="hovereffect">
+            <img class="img-responsive" src="~/Content/css/pexels-photo-336372.jpeg"  alt="">
+
+            
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="float:right;">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:375px" src="~/Content/css/dca2a62ead9e3918731e868874832ad7--mens-fashion-styles-fashion-blogs.jpg" alt="">
+            <div class="overlay">
+
+                <h2>Trendy wristwatch</h2>
+                <a class="info" href="Product?page=1&category=8">Read More</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="float:right;">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:375px" src="~/Content/css/pexels-photo-617963.jpeg" alt="">
+            <div class="overlay">
+
+
+
+                <h2>Stylish Outfit</h2>
+                <a class="info" href="Product?page=1&category=5">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+@* about ses *@
+
+
+@* category shuru *@
+
+<div style="padding:30px"></div>
+
+<div class="container" style="background:#eff3f9">
+    <h1 style="text-align:center;font-family: 'Archivo Black', sans-serif; letter-spacing:.2em;text-shadow: 2px 2px #808080;"> CATEGORY</h1>
+    <div style="padding:30px"></div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px"  src="~/Multimidea/image/tumblr_mow0xiYhDw1rmq596o1_500.jpg"  alt="">
+
+           
+            
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/imagnewe/pexels-photo-297933.jpeg" alt="">
+
+
+
+            
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/imagnewe/steinhart-titanium-watch.jpg" alt="">
+            <div class="overlay">
+
+                <h2>Trendy wristwatch</h2>
+                <a class="info" href="Product?page=1&category=8">Read More</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/carosel_pic/pexels-photo-531070.jpeg" alt="">
+            <div class="overlay">
+
+
+                <h2>Stylish Outfit</h2>
+                <a class="info" href="Product?page=1&category=5">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/image/4c51580aaeea7c57aedbebfd564ca8c4--flannel-shirts-button-down-shirts.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/imagnewe/pexels-photo-110644.jpeg" alt="">
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/image/11472625395883-Pannkh-Women-Navy-Blue-Solid-Regular-Top-7381472625395296-1.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/imagnewe/wood-night-camera-vintage.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/image/12ef8d755f0583f57eda45d187b0907d--mens-short-sleeve-shirts-short-shirts.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+   
+   
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/image/beige-latest-indian-wedding-reception-wear-crepe-saree-with-blouse-b17128-274.jpg" alt="">
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Multimidea/image/maxresdefault.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" style="height:300px;width:300px" src="~/Content/css/dca2a62ead9e3918731e868874832ad7--mens-fashion-styles-fashion-blogs.jpg" alt="">
+
+            @*<img src="~/Multimidea/image/redmi4xmain.jpg" />*@
+
+            <div class="overlay">
+                <h2>Best Looks</h2>
+                <a class="info" href=@Url.Action("Index","Product")>Read More</a>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+
+@*<div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
+                <h2>Heading</h2>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image">
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="http://placehold.it/500x500" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="http://placehold.it/500x500" alt="Generic placeholder image">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="http://placehold.it/500x500" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+    </div>*@
+
+
+<div style="padding:60px"></div>
+
+
+@* FOR MESSAGE FROM THE CUSTOMER *@
+
+@using (Html.BeginForm("Create", "feed_back", FormMethod.Post))
+{
+    <section id="contact" style="padding-bottom:750px">
+
+        <h1 class="section-header">CONTACT</h1>
+
+        <div class="contact-wrapper">
+
+            <form class="form-horizontal">
+
+                <div class="form-group col-sm-12">
+
+
+                    @Html.EditorFor(model => model.customer_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "NAME" } })
+
+                </div>
+                <div class="form-group col-sm-12">
+
+
+                    @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @placeholder = "EMAIL" } })
+
+                </div>
+                <div class="form-group col-sm-12">
+
+
+                    @Html.EditorFor(model => model.message, new { htmlAttributes = new { @class = "form-control", @placeholder = "MESSAGE" } })
+
+                </div>
+
+                <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                    <div class="button">
+                        <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                    </div>
+
+                </button>
+
+            </form>
+
+            <div class="direct-contact-container">
+                <ul class="contact-list">
+                    <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">DHAKA | BANGLADESH</span></i></li>
+
+                    <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+
+                    <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">shopcircuit@gmail.com</a></span></i></li>
+
+                </ul>
+                <hr>
+                <ul class="social-media-list">
+                    <li>
+                        <a href="#" target="_blank" class="contact-icon">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" class="contact-icon">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" class="contact-icon">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" class="contact-icon">
+                            <i class="fa fa-codepen" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    </section>
+}
+
+
+
+
+@*<div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+
+                <div class="col-md-10">
+
+                    @Html.ValidationMessageFor(model => model.customer_Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+
+                    @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+
+                    @Html.ValidationMessageFor(model => model.message, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }*@
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>

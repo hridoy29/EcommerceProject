@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Project_497.Models.feed_back>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+
+
+<p style="font-weight:900; padding:15px; font-size:26px">
+    @Html.ActionLink("Admin","Index", "Admin")
+</p>
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr>
+        <th style="font-weight:700" class="text-center text-success">
+            @Html.DisplayNameFor(model => model.customer_Name)
+        </th>
+        <th style="font-weight:700" class="text-center text-success">
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th style="font-weight:700" class="text-center text-success">
+            @Html.DisplayNameFor(model => model.message)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.customer_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.message)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-default btn-large" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger btn-large" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,196 @@
+﻿@model IEnumerable<Project_497.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+<div style="padding:50px"></div>
+
+<style>
+    .custome-div {
+        margin: 3px;
+        min-height: 30px;
+        
+       
+    }
+</style>
+
+<p style="font-size:larger; padding:10px; font-weight:900" >
+    @Html.ActionLink("Create New", "Create"@*, new { @class = "btn btn-warning btn-large" }*@)
+</p>
+
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style= "background-color:rgb(123,209,209)">
+    <tr >
+       
+        <th>
+            
+        </th>
+        <th class="text-center text-success"style="font-weight:900">
+            
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th class="text-center text-success"style="font-weight:900">
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+       
+        <th class="text-center text-success"style="font-weight:900">
+            @Html.DisplayNameFor(model => model.offerAvailable)
+        </th>
+        <th class="text-center text-success"style="font-weight:900">
+            @Html.DisplayNameFor(model => model.Buy)
+        </th>
+       
+       
+        <th class="text-center text-success"style="font-weight:900">Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td >
+            <a href="#"><img src="@Url.Content("~/Multimidea/image/" + item.image)" class="img-responsive img-thumbnail" style="width:300px;height:200px"/></a>
+        </td>
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem => item.productName)
+        </td>
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+       
+       
+      
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem => item.offerAvailable)
+        </td>
+        
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem => item.Buy)
+        </td>
+       
+       
+       
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.productId }, new { @class = "btn btn-warning btn-large" })
+            @Html.ActionLink("Details", "Details", new { id = item.productId }, new { @class = "btn btn-default btn-large" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.productId }, new { @class = "btn btn-danger btn-large" })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<th>
+        @Html.DisplayNameFor(model => model.January)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.February)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.March)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.April)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.May)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.June)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.July)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.August)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.September)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.October)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.November)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.December)
+    </th>*@
+
+
+@*<td>
+        @Html.DisplayFor(modelItem => item.sellEndDate)
+    </td>*@
+
+
+@*<td>
+        @Html.DisplayFor(modelItem => item.January)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.February)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.March)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.April)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.May)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.June)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.July)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.August)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.September)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.October)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.November)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.December)
+    </td>*@
+@*<td>
+        @Html.DisplayFor(modelItem => item.PredectionResult)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Result)
+    </td>*@

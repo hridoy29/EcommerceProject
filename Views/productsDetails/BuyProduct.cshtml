@@ -1,0 +1,53 @@
+﻿@model Project_497.Models.product
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    //if (Session["UserId"] == null)
+    //{
+    //    Response.Redirect("~/Login/Index");
+    //}
+}
+
+<div>
+     
+                @* AFTER BUY A PRODUCT THEN THAT PAGE WILL BE SHOWN *@
+
+    <hr />
+    <dl class="dl-horizontal">
+      
+
+
+            <dd>
+                <a href="#"><img src="@Url.Content("~/Multimidea/image/" + Model.image)" class="img-responsive img-thumbnail" style="width:450px;height:450px" /></a>
+            </dd>
+        <div style="padding:20px"></div>
+            <dt class="text-center text-success" style="font-weight:900">
+                @Html.DisplayNameFor(model => model.productName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.productName)
+            </dd>
+            <dt class="text-center text-success" style="font-weight:900">
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+            @*<dt>
+                @Html.DisplayNameFor(model => model.sellEndDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.sellEndDate)
+            </dd>*@
+       
+    </dl>
+
+        
+    @*<h2 class="text-center text-primary">
+        Want To Add More Product Into The Cart???
+    </h2>
+    <h3 class="text-center">Click Bellow</h3>*@
+
+</div>
+

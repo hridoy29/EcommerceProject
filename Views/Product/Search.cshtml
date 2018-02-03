@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Project_497.Models.product>
+
+
+
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+
+
+<div style="padding:50px"></div>
+
+
+@* Product/Search--- AFTER SEARCH FOR A PRODUCT THAT WILL SHOW HOW MANY PRODUCT HAS BEEN SELL IN A SPASIFIC MONTH *@
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr class="text-primary">
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.January)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.February)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.March)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.April)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.May)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.June)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.July)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.August)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.September)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.October)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.November)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.December)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="#"><img src="@Url.Content("~/Multimidea/image/" + item.image)" class="img-responsive img-thumbnail" style="width:300px;height:200px" /></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.January)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.February)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.March)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.April)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.May)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.June)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.July)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.August)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.September)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.October)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.November)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.December)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

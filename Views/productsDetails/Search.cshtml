@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Project_497.Models.product>
+@*@model Project_497.Models.product*@
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+
+
+
+
+                                                            @* THAT PAGE WILL SHOW AFTER YOU SEARCH FOR A PRODUCT  *@
+<p style="font-size:larger; padding:10px; font-weight:900">
+
+    @Html.ActionLink("Product", "Index", "Product")
+</p>
+<table class="custome-div table table-bordered table-condensed table-responsive table-hover table-striped" style="background-color:rgb(123,209,209)">
+
+    <tr class="text-primary">
+        <th class="text-center text-success" style="font-weight:900">
+
+        </th>
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+
+
+        <th class="text-center text-success" style="font-weight:900">
+            @Html.DisplayNameFor(model => model.category.name)
+        </th>
+
+
+        <th class="text-center text-success" style="font-weight:900"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="img-thumbnail img-responsive" style="width:200px; height:200px">
+                <a href="@Url.Action("Details", "productsDetails", new { id=item.productId}) ">
+                    <img src="@Url.Content("~/Multimidea/image/"+item.image)" class="btn-block img-responsive img-thumbnail" />
+                </a>
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td class="text-center text-primary">
+                @Html.DisplayFor(modelItem => item.category.name)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

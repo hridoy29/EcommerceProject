@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Project_497.Models.SubCategoryID>
+
+@{
+
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+
+
+<p style="font-size:larger; padding:10px; font-weight:900" >
+    @Html.ActionLink("Create New", "Create",new { @class = "btn btn-primary btn-large" })
+</p>
+<table class="table table-bordered table-condensed table-responsive table-hover table-striped" style= "background-color:rgb(123,209,209)">
+    <tr>
+        <th class="text-center text-success strong"style="font-weight:900">
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th class="text-center text-success strong"style="font-weight:900">
+            @Html.DisplayNameFor(model => model.category.name)
+        </th>
+        <th class="text-center text-success"style="font-weight:900">Action</th>
+    </tr>
+    @*<div class="btn-l"></div>*@
+@foreach (var item in Model) {
+    <tr class="table-responsive">
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.category.name)
+        </td>
+        <td class="text-center">
+            @Html.ActionLink("Edit", "Edit", new { id=item.SubCategoryID1}, new { @class = "btn btn-warning btn-large" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.SubCategoryID1 }, new { @class = "btn btn-default btn-large" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.SubCategoryID1 }, new { @class = "btn btn-danger btn-large" })
+        </td>
+    </tr>
+}
+
+</table>

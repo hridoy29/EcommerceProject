@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Project_497.Models.product>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@* THAT WILL SEND THE ID OF A SPESIFIC PRODUCT 
+@using (Html.BeginForm("SearchForSuggestion", "Product", FormMethod.Get))
+{
+    <div>
+        <input type="text" name="id" />&nbsp;
+        <input type="submit" value="Search" id="btnSubmit" class="btn-primary" /><span></span>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th></th>
+        <th class="text-center text-primary">
+            @Html.DisplayNameFor(model => model.productId)
+        </th>
+        <th class="text-center text-primary">
+            @Html.DisplayNameFor(model => model.productName)
+        </th> 
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="#"><img src="@Url.Content("~/Multimidea/image/" + item.image)" class="img-responsive img-thumbnail" /></a>
+        </td>
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem=>item.productId)
+        </td>
+        <td class="text-center text-primary">
+            @Html.DisplayFor(modelItem => item.productName)
+        </td>
+       
+       
+    </tr>
+}
+
+</table>*@

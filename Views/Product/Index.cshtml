@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="css/style.css">
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<script src="~/Content/js/index.js"></script>
+
+<div style="padding:20px"></div>
+@using (Html.BeginForm("Search", "Product", FormMethod.Get))
+{
+    <div>
+        <input type="text" name="q" />&nbsp;
+        <input type="submit" value="Search" id="btnSubmit" class="btn btn-primary fa" /><span></span>
+    </div>
+}
+
+@*@using (Html.BeginForm("Search", "productsDetails", FormMethod.Get))
+{
+    <div class="wrapper">
+        <input placeholder="Search..." class="myinput" />
+        <div class="search" onclick="openInput()">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+}*@
+@*@Html.Action("Categorypartial", "Category")*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Action("View", "Product")    @*Call the Partial View*@
+        </div>
+    </div>
+</div>
+<!---<input type="submit" onclick="location.href='@Url.Action("Index", "Home")'" value="go to another page" />-->
+<!--If we need A submit button for go one page to another we can use it.....-->
