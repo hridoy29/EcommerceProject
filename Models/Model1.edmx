@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="ConfirmPassword" Type="nvarchar" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginErrorMessage" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Click Difference">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cdate" Type="date" />
+          <Property Name="click" Type="int" />
+        </EntityType>
+        <EntityType Name="feed_back">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_Name" Type="nvarchar" MaxLength="350" />
+          <Property Name="mail" Type="nvarchar" MaxLength="350" />
+          <Property Name="message" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Percentage">
+          <Key>
+            <PropertyRef Name="percentageId" />
+          </Key>
+          <Property Name="percentageId" Type="int" Nullable="false" />
+          <Property Name="percentage" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productName" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="float" />
+          <Property Name="click" Type="int" />
+          <Property Name="userId" Type="int" />
+          <Property Name="SubCategoryID" Type="int" />
+          <Property Name="categoryId" Type="int" />
+          <Property Name="sellStartDate" Type="datetime" />
+          <Property Name="sellEndDate" Type="datetime" />
+          <Property Name="offerImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="offerDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="offerAvailable" Type="datetime" />
+          <Property Name="Buy" Type="int" />
+          <Property Name="count" Type="int" />
+          <Property Name="January" Type="int" />
+          <Property Name="February" Type="int" />
+          <Property Name="March" Type="int" />
+          <Property Name="April" Type="int" />
+          <Property Name="May" Type="int" />
+          <Property Name="June" Type="int" />
+          <Property Name="July" Type="int" />
+          <Property Name="August" Type="int" />
+          <Property Name="September" Type="int" />
+          <Property Name="October" Type="int" />
+          <Property Name="November" Type="int" />
+          <Property Name="December" Type="int" />
+          <Property Name="PredectionResult" Type="int" />
+          <Property Name="Result" Type="int" />
+          <Property Name="predection" Type="int" />
+          <Property Name="clickDate" Type="date" />
+          <Property Name="previous_click" Type="int" />
+          <Property Name="count_improvment" Type="int" />
+        </EntityType>
+        <EntityType Name="Product Sell">
+          <Key>
+            <PropertyRef Name="SellProductId" />
+          </Key>
+          <Property Name="SellProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" />
+          <Property Name="productName" Type="varchar" MaxLength="250" />
+          <Property Name="image" Type="nvarchar" MaxLength="250" />
+          <Property Name="price" Type="float" />
+          <Property Name="sellStartDate" Type="datetime" />
+          <Property Name="sellEndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubCategoryID">
+          <Key>
+            <PropertyRef Name="SubCategoryID" />
+          </Key>
+          <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="categoryid" Type="int" />
+        </EntityType>
+        <Association Name="FK_product_Admin">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_SubCategoryID">
+          <End Role="SubCategoryID" Type="Self.SubCategoryID" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategoryID">
+              <PropertyRef Name="SubCategoryID" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="SubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubCategoryID_category">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="SubCategoryID" Type="Self.SubCategoryID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="SubCategoryID">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="projectModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Click Difference" EntityType="Self.Click Difference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="feed_back" EntityType="Self.feed_back" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Percentage" EntityType="Self.Percentage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product Sell" EntityType="Self.Product Sell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubCategoryID" EntityType="Self.SubCategoryID" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_product_Admin" Association="Self.FK_product_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_category" Association="Self.FK_product_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_SubCategoryID" Association="Self.FK_product_SubCategoryID">
+            <End Role="SubCategoryID" EntitySet="SubCategoryID" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubCategoryID_category" Association="Self.FK_SubCategoryID_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="SubCategoryID" EntitySet="SubCategoryID" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginErrorMessage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products" Relationship="projectModel.FK_product_Admin" FromRole="Admin" ToRole="product" />
+        </EntityType>
+        <EntityType Name="Product_Sell">
+          <Key>
+            <PropertyRef Name="SellProductId" />
+          </Key>
+          <Property Name="SellProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" />
+          <Property Name="productName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="sellStartDate" Type="DateTime" Precision="3" />
+          <Property Name="sellEndDate" Type="DateTime" Precision="3" />
+          </EntityType>
+        <EntityContainer Name="projectEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Product_Sells" EntityType="Self.Product_Sell" />
+          <EntitySet Name="categories" EntityType="projectModel.category" />
+          <EntitySet Name="SubCategoryIDs" EntityType="projectModel.SubCategoryID" />
+          <AssociationSet Name="FK_SubCategoryID_category" Association="projectModel.FK_SubCategoryID_category">
+            <End Role="category" EntitySet="categories" />
+            <End Role="SubCategoryID" EntitySet="SubCategoryIDs" />
+          </AssociationSet>
+          <EntitySet Name="Percentages" EntityType="projectModel.Percentage" />
+          <EntitySet Name="Click_Differences" EntityType="projectModel.Click_Difference" />
+          <EntitySet Name="feed_back" EntityType="projectModel.feed_back" />
+          <EntitySet Name="products" EntityType="projectModel.product" />
+          <AssociationSet Name="FK_product_Admin" Association="projectModel.FK_product_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_category" Association="projectModel.FK_product_category">
+            <End Role="category" EntitySet="categories" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_SubCategoryID" Association="projectModel.FK_product_SubCategoryID">
+            <End Role="SubCategoryID" EntitySet="SubCategoryIDs" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SubCategoryIDs" Relationship="projectModel.FK_SubCategoryID_category" FromRole="category" ToRole="SubCategoryID" />
+          <NavigationProperty Name="products" Relationship="projectModel.FK_product_category" FromRole="category" ToRole="product" />
+        </EntityType>
+        <EntityType Name="SubCategoryID">
+          <Key>
+            <PropertyRef Name="SubCategoryID1" />
+          </Key>
+          <Property Name="SubCategoryID1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="categoryid" Type="Int32" />
+          <NavigationProperty Name="category" Relationship="projectModel.FK_SubCategoryID_category" FromRole="SubCategoryID" ToRole="category" />
+          <NavigationProperty Name="products" Relationship="projectModel.FK_product_SubCategoryID" FromRole="SubCategoryID" ToRole="product" />
+        </EntityType>
+        <Association Name="FK_SubCategoryID_category">
+          <End Type="projectModel.category" Role="category" Multiplicity="0..1" />
+          <End Type="projectModel.SubCategoryID" Role="SubCategoryID" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="SubCategoryID">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Percentage">
+          <Key>
+            <PropertyRef Name="percentageId" />
+          </Key>
+          <Property Name="percentageId" Type="Int32" Nullable="false" />
+          <Property Name="percentage1" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Click_Difference">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cdate" Type="DateTime" Precision="0" />
+          <Property Name="click" Type="Int32" />
+        </EntityType>
+        <EntityType Name="feed_back">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="click" Type="Int32" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="SubCategoryID" Type="Int32" />
+          <Property Name="categoryId" Type="Int32" />
+          <Property Name="sellStartDate" Type="DateTime" Precision="3" />
+          <Property Name="sellEndDate" Type="DateTime" Precision="3" />
+          <Property Name="offerImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="offerDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="offerAvailable" Type="DateTime" Precision="3" />
+          <Property Name="Buy" Type="Int32" />
+          <Property Name="count" Type="Int32" />
+          <Property Name="January" Type="Int32" />
+          <Property Name="February" Type="Int32" />
+          <Property Name="March" Type="Int32" />
+          <Property Name="April" Type="Int32" />
+          <Property Name="May" Type="Int32" />
+          <Property Name="June" Type="Int32" />
+          <Property Name="July" Type="Int32" />
+          <Property Name="August" Type="Int32" />
+          <Property Name="September" Type="Int32" />
+          <Property Name="October" Type="Int32" />
+          <Property Name="November" Type="Int32" />
+          <Property Name="December" Type="Int32" />
+          <Property Name="PredectionResult" Type="Int32" />
+          <Property Name="Result" Type="Int32" />
+          <Property Name="predection" Type="Int32" />
+          <Property Name="clickDate" Type="DateTime" Precision="0" />
+          <Property Name="previous_click" Type="Int32" />
+          <Property Name="count_improvment" Type="Int32" />
+          <NavigationProperty Name="Admin" Relationship="projectModel.FK_product_Admin" FromRole="product" ToRole="Admin" />
+          <NavigationProperty Name="category" Relationship="projectModel.FK_product_category" FromRole="product" ToRole="category" />
+          <NavigationProperty Name="SubCategoryID1" Relationship="projectModel.FK_product_SubCategoryID" FromRole="product" ToRole="SubCategoryID" />
+        </EntityType>
+        <Association Name="FK_product_Admin">
+          <End Type="projectModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="projectModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_category">
+          <End Type="projectModel.category" Role="category" Multiplicity="0..1" />
+          <End Type="projectModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_SubCategoryID">
+          <End Type="projectModel.SubCategoryID" Role="SubCategoryID" Multiplicity="0..1" />
+          <End Type="projectModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategoryID">
+              <PropertyRef Name="SubCategoryID1" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="SubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities3">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="projectModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Sells">
+            <EntityTypeMapping TypeName="projectModel.Product_Sell">
+              <MappingFragment StoreEntitySet="Product Sell">
+                <ScalarProperty Name="SellProductId" ColumnName="SellProductId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="sellStartDate" ColumnName="sellStartDate" />
+                <ScalarProperty Name="sellEndDate" ColumnName="sellEndDate" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="projectModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategoryIDs">
+            <EntityTypeMapping TypeName="projectModel.SubCategoryID">
+              <MappingFragment StoreEntitySet="SubCategoryID">
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="SubCategoryID1" ColumnName="SubCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Percentages">
+            <EntityTypeMapping TypeName="projectModel.Percentage">
+              <MappingFragment StoreEntitySet="Percentage">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="percentage1" ColumnName="percentage" />
+                <ScalarProperty Name="percentageId" ColumnName="percentageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Click_Differences">
+            <EntityTypeMapping TypeName="projectModel.Click_Difference">
+              <MappingFragment StoreEntitySet="Click Difference">
+                <ScalarProperty Name="click" ColumnName="click" />
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feed_back">
+            <EntityTypeMapping TypeName="projectModel.feed_back">
+              <MappingFragment StoreEntitySet="feed_back">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="customer_Name" ColumnName="customer_Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="projectModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="count_improvment" ColumnName="count_improvment" />
+                <ScalarProperty Name="previous_click" ColumnName="previous_click" />
+                <ScalarProperty Name="clickDate" ColumnName="clickDate" />
+                <ScalarProperty Name="predection" ColumnName="predection" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="PredectionResult" ColumnName="PredectionResult" />
+                <ScalarProperty Name="December" ColumnName="December" />
+                <ScalarProperty Name="November" ColumnName="November" />
+                <ScalarProperty Name="October" ColumnName="October" />
+                <ScalarProperty Name="September" ColumnName="September" />
+                <ScalarProperty Name="August" ColumnName="August" />
+                <ScalarProperty Name="July" ColumnName="July" />
+                <ScalarProperty Name="June" ColumnName="June" />
+                <ScalarProperty Name="May" ColumnName="May" />
+                <ScalarProperty Name="April" ColumnName="April" />
+                <ScalarProperty Name="March" ColumnName="March" />
+                <ScalarProperty Name="February" ColumnName="February" />
+                <ScalarProperty Name="January" ColumnName="January" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="offerAvailable" ColumnName="offerAvailable" />
+                <ScalarProperty Name="offerDetails" ColumnName="offerDetails" />
+                <ScalarProperty Name="offerImage" ColumnName="offerImage" />
+                <ScalarProperty Name="sellEndDate" ColumnName="sellEndDate" />
+                <ScalarProperty Name="sellStartDate" ColumnName="sellStartDate" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="click" ColumnName="click" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

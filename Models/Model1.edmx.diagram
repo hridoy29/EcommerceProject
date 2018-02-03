@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fad1d9cd00f04705adbdde720db78102" Name="Diagram1">
+        <EntityTypeShape EntityType="projectModel.Admin" Width="1.5" PointX="0.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="projectModel.Product_Sell" Width="1.5" PointX="2.625" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="projectModel.category" Width="1.5" PointX="6.75" PointY="3" />
+        <EntityTypeShape EntityType="projectModel.SubCategoryID" Width="1.5" PointX="8.875" PointY="2.25" />
+        <AssociationConnector Association="projectModel.FK_SubCategoryID_category" />
+        <EntityTypeShape EntityType="projectModel.Percentage" Width="1.5" PointX="2.625" PointY="0.75" />
+        <EntityTypeShape EntityType="projectModel.Click_Difference" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="projectModel.feed_back" Width="1.5" PointX="6.25" PointY="0.875" />
+        <EntityTypeShape EntityType="projectModel.product" Width="1.5" PointX="4.625" PointY="0.75" />
+        <AssociationConnector Association="projectModel.FK_product_Admin" />
+        <AssociationConnector Association="projectModel.FK_product_category" />
+        <AssociationConnector Association="projectModel.FK_product_SubCategoryID" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
